@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Frases · El pañuelómetro</title><meta name="description" content="Las frases de la resistencia al pañuelo marrón. El repertorio completo, fuera de la home."><link rel="stylesheet" href="/styles.css"></head><body>
+<div class="announcement">Una iniciativa de <b>IA en un sorbo</b> · Destilando excusas para no usar IA.</div>
+<header><nav class="wrap"><a class="brand" href="/">IA <span>en un sorbo</span><small>DESTILANDO VERDADES DE LA GenAI</small></a><div class="navlinks"><a href="/">El test</a><a href="/frases" aria-current="page">Frases</a><a href="/dedicar">Dedicar</a><a href="/emojis">Slack Emojis</a><a href="/stats">Stats</a><a href="https://www.youtube.com/@IAenunsorbo" target="_blank" rel="noopener" class="btn">Ver el podcast</a></div></nav></header>
+<main class="page"><section><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">El repertorio</div><h2>Frases que ya escuchaste.</h2></div><p>Las resistencias salieron de la home. Tocá una y queda copiada, lista para la dedicatoria o para el grupo.</p></div><p id="phraseStatus" class="small" role="status">Todavía no copiaste ninguna.</p><div class="phraselist" id="phraseList"></div></div></section></main>
+<footer><div class="wrap"><span>IA en un sorbo · Un poco de humor. Mucho por aprender.</span><span><a href="https://github.com/gbrey/brownmeter">GitHub</a> · Inspirado en <a href="https://meatproxy.me/" target="_blank" rel="noopener">meatproxy.me</a></span></div></footer>
+<script src="/phrases.js"></script>
+<script>
+const list = document.querySelector("#phraseList");
+const status = document.querySelector("#phraseStatus");
+list.innerHTML = phrases.map((phrase) => `<button type="button" data-phrase="${phrase.replace(/"/g, "&quot;")}">“${phrase}”</button>`).join("");
+list.addEventListener("click", async (event) => {
+  const button = event.target.closest("button");
+  if (!button) return;
+  list.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
+  button.setAttribute("aria-pressed", "true");
+  try {
+    await navigator.clipboard.writeText(button.dataset.phrase);
+    status.textContent = "Copiada. Pegala donde haga falta.";
+  } catch {
+    status.textContent = button.dataset.phrase;
+  }
+});
+</script>
+</body></html>

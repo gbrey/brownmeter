@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "brownmeter",
+  "account_id": "abcce3a933dd0f7acbb57599fae04842",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-30",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*", "/insignia", "/insignia/*", "/certificado", "/certificado/*"]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "BROWNMETER_SUBS",
+      "id": "0a61ebb7ae994f9b85d7bdfeaf3beb59"
+    }
+  ]
+}

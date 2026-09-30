@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stats · El pañuelómetro</title><meta name="description" content="Tests, regalos de pañuelo marrón y los claritos que no se quedan sin trabajo."><link rel="stylesheet" href="/styles.css"></head><body>
+<div class="announcement">Una iniciativa de <b>IA en un sorbo</b> · Destilando excusas para no usar IA.</div>
+<header><nav class="wrap"><a class="brand" href="/">IA <span>en un sorbo</span><small>DESTILANDO VERDADES DE LA GenAI</small></a><div class="navlinks"><a href="/">El test</a><a href="/frases">Frases</a><a href="/dedicar">Dedicar</a><a href="/emojis">Slack Emojis</a><a href="/stats" aria-current="page">Stats</a><a href="https://www.youtube.com/@IAenunsorbo" target="_blank" rel="noopener" class="btn">Ver el podcast</a></div></nav></header>
+<main class="page"><section><div class="wrap"><div class="sectionhead"><div><div class="eyebrow live"><i></i> En vivo</div><h2>Tres contadores.</h2></div><p>Se mueven cuando alguien deja el correo y genera un certificado. Nada de respuestas sueltas.</p></div><div class="counters"><article class="counter"><b id="cTests">0</b><span>Tests realizados</span></article><article class="counter"><b id="cGifts">0</b><span>Regalos de pañuelo marrón</span></article><article class="counter"><b id="cLight">0</b><span>Pañuelos más claritos. Estos no se quedan sin trabajo.</span></article></div></div></section></main>
+<footer><div class="wrap"><span>IA en un sorbo · Un poco de humor. Mucho por aprender.</span><span><a href="https://github.com/gbrey/brownmeter">GitHub</a> · Inspirado en <a href="https://meatproxy.me/" target="_blank" rel="noopener">meatproxy.me</a></span></div></footer>
+<script>
+const format = new Intl.NumberFormat("es-AR");
+async function loadStats() {
+  try {
+    const data = await fetch("/api/stats").then((response) => response.json());
+    document.querySelector("#cTests").textContent = format.format(data.tests || 0);
+    document.querySelector("#cGifts").textContent = format.format(data.gifts || 0);
+    document.querySelector("#cLight").textContent = format.format(data.light || 0);
+  } catch {
+    /* el próximo intento vuelve a pedirlos */
+  }
+}
+loadStats();
+setInterval(loadStats, 8000);
+</script>
+</body></html>

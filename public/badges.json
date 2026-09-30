@@ -1,0 +1,58 @@
+{
+  "levels": [
+    {
+      "slug": "limpio",
+      "name": "Cyborg",
+      "tag": "Agentic",
+      "color": "#68ded9",
+      "quote": "La IA ya es parte del oficio.",
+      "proud": "Cero pañuelo. Cuanto más agentic, menos marrón.",
+      "shame": "Cero pañuelo, y el criterio sigue acá."
+    },
+    {
+      "slug": "clarito",
+      "name": "Marrón clarito",
+      "tag": "El postergador",
+      "color": "#c29b76",
+      "quote": "El lunes empiezo.",
+      "proud": "Hay un resto de marrón, pero la dirección es agentic.",
+      "shame": "Postergo el uso. Poco IA, pañuelo clarito."
+    },
+    {
+      "slug": "cafe",
+      "name": "Marrón café",
+      "tag": "El escéptico",
+      "color": "#ab7854",
+      "quote": "Lo probé y no sirve.",
+      "proud": "El marrón se ve, y lo acepto.",
+      "shame": "Uso poco la IA. Un no de 2023 sigue mandando."
+    },
+    {
+      "slug": "chocolate",
+      "name": "Marrón chocolate",
+      "tag": "El artesano",
+      "color": "#875235",
+      "quote": "Yo lo hago a mano.",
+      "proud": "Hacer todo a mano no era una estrategia.",
+      "shame": "Casi no delego. Más mano, más marrón."
+    },
+    {
+      "slug": "espresso",
+      "name": "Marrón espresso",
+      "tag": "El resistente",
+      "color": "#643a28",
+      "quote": "Acá no aplica.",
+      "proud": "Dije que no aplica. Ya está dicho.",
+      "shame": "Casi no uso IA. Por eso el pañuelo es espresso."
+    },
+    {
+      "slug": "historico",
+      "name": "Marrón histórico",
+      "tag": "El último bastión",
+      "color": "#41271d",
+      "quote": "Esto ya va a pasar.",
+      "proud": "Es el máximo marrón y lo publico igual.",
+      "shame": "Casi no uso IA. El pañuelo histórico es exactamente eso."
+    }
+  ]
+}
